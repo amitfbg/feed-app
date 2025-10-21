@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card: 0 0% 100%;
+}
+
+.card {
+  @apply bg-white shadow-card rounded-2xl;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl font-medium px-4 py-2 transition;
+}
+.btn-primary {
+  @apply btn bg-brand text-white hover:opacity-90 active:opacity-80;
+}
+.input {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-brand;
+}
+
+button {
+  @apply text-gray-500 cursor-pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feed-card {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.feed-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-fade {
+  animation: fadeIn 400ms ease-out;
+}
+
+@keyframes newPostPop {
+  0% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 rgba(87, 70, 234, 0);
+  }
+  50% {
+    transform: scale(1.008);
+    box-shadow: 0 0 0 5px rgba(87, 70, 234, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(87, 70, 234, 0.04);
+  }
+}
+
+.new-post {
+  animation: newPostPop 900ms ease-out 1 forwards;
+}
